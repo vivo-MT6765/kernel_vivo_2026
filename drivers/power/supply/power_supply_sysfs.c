@@ -145,7 +145,7 @@ static ssize_t power_supply_show_property(struct device *dev,
 	ssize_t ret;
 	struct power_supply *psy = dev_get_drvdata(dev);
 	enum power_supply_property psp = attr - power_supply_attrs;
-	union power_supply_propval value;
+	union power_supply_propval value = {0,};
 
 	if (psp == POWER_SUPPLY_PROP_TYPE) {
 		value.intval = psy->desc->type;
