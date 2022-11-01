@@ -168,6 +168,28 @@ enum {
 	POWER_SUPPLY_ALIGN_ERROR,
 };
 
+enum {
+	POWER_SUPPLY_ENGINE_NORMAL = 0,
+	POWER_SUPPLY_ENGINE_DUAL,
+	POWER_SUPPLY_ENGINE_RESERVED,
+	POWER_SUPPLY_ENGINE_SUPER,
+};
+
+enum {
+	POWER_SUPPLY_CHARGING_SPEED_NORMAL = 0,
+	POWER_SUPPLY_CHARGING_SPEED_1GEAR,
+	POWER_SUPPLY_CHARGING_SPEED_2GEAR,
+	POWER_SUPPLY_CHARGING_SPEED_3GEAR,
+	POWER_SUPPLY_CHARGING_SPEED_4GEAR,
+};
+
+enum DIRECT_CHARGER_STATUS {
+	DIRECT_CHARGER_UNKNOW		= 0x0,
+	DIRECT_CHARGER_PREPARE		= 0x1,
+	DIRECT_CHARGER_IS_CHARGERING	= 0x2,
+	DIRECT_CHARGER_END		= 0x3,
+};
+
 enum power_supply_property {
 	/* Properties of type `int' */
 	POWER_SUPPLY_PROP_STATUS = 0,
@@ -431,6 +453,7 @@ enum power_supply_type {
 	POWER_SUPPLY_TYPE_UFP,			/* Type-C UFP */
 	POWER_SUPPLY_TYPE_DFP,			/* Type-C DFP */
 	POWER_SUPPLY_TYPE_CHARGE_PUMP,		/* Charge Pump */
+#endif
 };
 
 enum power_supply_usb_type {
@@ -444,6 +467,7 @@ enum power_supply_usb_type {
 	POWER_SUPPLY_USB_TYPE_PD_DRP,		/* PD Dual Role Port */
 	POWER_SUPPLY_USB_TYPE_PD_PPS,		/* PD Programmable Power Supply */
 	POWER_SUPPLY_USB_TYPE_APPLE_BRICK_ID,	/* Apple Charging Method */
+	POWER_SUPPLY_USB_TYPE_FLOAT,
 };
 
 /* Indicates USB Type-C CC connection status */
